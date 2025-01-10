@@ -21,6 +21,8 @@ namespace LogsProtocolAdvanced.Types
                 return true;
             }
             EventConfig config = Files.Instance.config.events["onStart"];
+            if (string.IsNullOrEmpty(config.url))
+                return true;
             SvManager.Instance.StartCoroutine(Utils.sendWebhook(config, new object[] {DateTime.Now.ToString("HH:mm:ss")}));
             return true;
         }

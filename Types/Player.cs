@@ -22,6 +22,8 @@ namespace LogsProtocolAdvanced.Types
                     return true;
                 }
                 EventConfig config = Files.Instance.config.events["onJoin"];
+                if (string.IsNullOrEmpty(config.url))
+                    return true;
                 player.StartCoroutine(Utils.sendWebhook(config, new object[] { player.username, player.ID }));
             }
             return true;
@@ -42,6 +44,8 @@ namespace LogsProtocolAdvanced.Types
                     return true;
                 }
                 EventConfig config = Files.Instance.config.events["onLeft"];
+                if (string.IsNullOrEmpty(config.url))
+                    return true;
                 player.StartCoroutine(Utils.sendWebhook(config, new object[] { player.username, player.ID }));
             }
             return true;
@@ -62,10 +66,14 @@ namespace LogsProtocolAdvanced.Types
                     return true;
                 }
                 EventConfig config = Files.Instance.config.events["onDeath"];
+                if (string.IsNullOrEmpty(config.url))
+                    return true;
                 player.StartCoroutine(Utils.sendWebhook(config, new object[] { player.username, player.ID, attacker.username, attacker.ID }));
                 if (Files.Instance.config.events.ContainsKey("onKill"))
                 {
                     EventConfig config2 = Files.Instance.config.events["onKill"];
+                    if (string.IsNullOrEmpty(config2.url))
+                        return true;
                     attacker.StartCoroutine(Utils.sendWebhook(config2, new object[] {  attacker.username, attacker.ID, player.username, player.ID, }));
                 }
             }
@@ -84,6 +92,8 @@ namespace LogsProtocolAdvanced.Types
                 return true;
             }
             EventConfig config = Files.Instance.config.events["onChatLocal"];
+            if (string.IsNullOrEmpty(config.url))
+                return true;
             player.StartCoroutine(Utils.sendWebhook(config, new object[] { player.username, player.ID, message }));
             return true;
         }
@@ -100,6 +110,8 @@ namespace LogsProtocolAdvanced.Types
                 return true;
             }
             EventConfig config = Files.Instance.config.events["onChatGlobal"];
+            if (string.IsNullOrEmpty(config.url))
+                return true;
             player.StartCoroutine(Utils.sendWebhook(config, new object[] { player.username, player.ID, message }));
             return true;
         }
@@ -116,6 +128,8 @@ namespace LogsProtocolAdvanced.Types
                 return true;
             }
             EventConfig config = Files.Instance.config.events["onCommand"];
+            if (string.IsNullOrEmpty(config.url))
+                return true;
             player.StartCoroutine(Utils.sendWebhook(config, new object[] { player.username, player.ID, message }));
             return true;
         }

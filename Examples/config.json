@@ -1,7 +1,7 @@
 {
     "events": {
         "onStart": {
-            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "url": "",
             "webhook": {
                 "username": "Server status",
                 "avatar_url": null,
@@ -17,7 +17,7 @@
             }
         },
         "onJoin": {
-            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "url": "",
             "webhook": {
                 "username": "On Join",
                 "avatar_url": null,
@@ -33,7 +33,7 @@
             }
         },
         "onLeft": {
-            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "url": "",
             "webhook": {
                 "username": "On Left",
                 "avatar_url": null,
@@ -49,7 +49,7 @@
             }
         },
         "onDeath": {
-            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "url": "",
             "webhook": {
                 "username": "Deaths",
                 "avatar_url": null,
@@ -65,7 +65,7 @@
             }
         },
         "onKill": {
-            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "url": "",
             "webhook": {
                 "username": "Kills",
                 "avatar_url": null,
@@ -81,7 +81,7 @@
             }
         },
         "onChatLocal": {
-            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "url": "",
             "webhook": {
                 "username": "Chat Local",
                 "avatar_url": null,
@@ -90,7 +90,7 @@
             }
         },
         "onChatGlobal": {
-            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "url": "",
             "webhook": {
                 "username": "Chat Global",
                 "avatar_url": null,
@@ -99,7 +99,7 @@
             }
         },
         "onCommand": {
-            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "url": "",
             "webhook": {
                 "username": "Commands",
                 "avatar_url": null,

@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 using UnityEngine;
 namespace LogsProtocolAdvanced
 {
@@ -28,12 +30,6 @@ namespace LogsProtocolAdvanced
                 }
                 return _instance;
             }
-        }
-
-        private Files()
-        {
-            LoadConfig();
-            ReloadConfig();
         }
 
         public void ReloadConfig()
@@ -65,7 +61,7 @@ namespace LogsProtocolAdvanced
             }
         }
 
-        public void LoadConfig()
+        public async void LoadConfig()
         {
             try
             {
@@ -78,18 +74,61 @@ namespace LogsProtocolAdvanced
 
                 if (!File.Exists(ConfigFilePath))
                 {
-                    var json = JsonConvert.SerializeObject(Config.GetDefault(), Formatting.Indented);
-                    File.WriteAllText(ConfigFilePath, json);
-                    Debug.Log("[LogsProtocol Advanced] Config file created.");
+                    Debug.Log("Config file does not exist. Attempting to download...");
+
+                    // Intentar descargar el config.json desde la URL
+                    var configDownloaded = await DownloadConfigJsonAsync(ConfigFilePath);
+
+                    // Si la descarga fue exitosa, no es necesario crear un archivo nuevo.
+                    if (!configDownloaded)
+                    {
+                        // Si la descarga falla, crear el archivo con la configuración predeterminada
+                        var json = JsonConvert.SerializeObject(Config.GetDefault(), Formatting.Indented);
+                        File.WriteAllText(ConfigFilePath, json);
+                        Debug.Log("[LogsProtocol Advanced] Config file created with default settings.");
+                    }
                 }
                 else
                 {
                     Debug.Log("Config file already exists.");
                 }
+                ReloadConfig();
             }
             catch (Exception ex)
             {
                 Debug.LogError($"Failed to load config: {ex.Message}");
+            }
+        }
+        private async Task<bool> DownloadConfigJsonAsync(string filePath)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    // URL de donde descargar el archivo
+                    string configUrl = "https://raw.githubusercontent.com/DevHaziel/LogsProtocolAdvanced/master/Examples/config.json";
+
+                    // Descargar el archivo
+                    var response = await client.GetAsync(configUrl);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        File.WriteAllText(filePath, json);
+                        Debug.Log("[LogsProtocol Advanced] Config file downloaded successfully.");
+                        return true; // Indica que la descarga fue exitosa
+                    }
+                    else
+                    {
+                        Debug.LogError($"Failed to download config: {response.ReasonPhrase}");
+                        return false; // Indica que la descarga falló
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Error during config download: {ex.Message}");
+                return false; // Si ocurre una excepción, la descarga falló
             }
         }
     }
