@@ -17,7 +17,6 @@ namespace LogsProtocolAdvanced.Types
             }
             if (!Files.Instance.config.events.ContainsKey("onStart"))
             {
-                Debug.LogError("onStart event is not configured.");
                 return true;
             }
             EventConfig config = Files.Instance.config.events["onStart"];

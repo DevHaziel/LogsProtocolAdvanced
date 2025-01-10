@@ -16,13 +16,11 @@ namespace LogsProtocolAdvanced
                 yield break;
             }
 
-            Debug.Log($"Sending webhook to URL: {config.url}");
             if(config.webhook == null)
             {
                 Debug.LogError("Webhook is null.");
                 yield break;
             }
-            Debug.Log(args.Length);
             if (config.webhook.content != null)
                 config.webhook.content = string.Format(config.webhook.content, args);
             if(config.webhook.embeds != null)
@@ -41,9 +39,7 @@ namespace LogsProtocolAdvanced
                 }
             }
 
-            Debug.Log("Webhook message: " + config.webhook.content);
             string json = JsonConvert.SerializeObject(config.webhook);
-            Debug.Log("Webhook JSON: " + json);
             WebhookSender.Send(config.webhook, config.url);
             yield return null;
         }
