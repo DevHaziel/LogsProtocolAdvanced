@@ -1,0 +1,111 @@
+{
+    "events": {
+        "onStart": {
+            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "webhook": {
+                "username": "Server status",
+                "avatar_url": null,
+                "content": "",
+                "embeds": [
+                    {
+                        "title": "Server started",
+                        "description": "Server started at: {0}",
+                        "fields": [],
+                        "color": "#4bfb1c"
+                    }
+                ]
+            }
+        },
+        "onJoin": {
+            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "webhook": {
+                "username": "On Join",
+                "avatar_url": null,
+                "content": "",
+                "embeds": [
+                    {
+                        "title": "Player joined",
+                        "description": "The player **{0}** joined the server.",
+                        "fields": [],
+                        "color": "#4bfb1c"
+                    }
+                ]
+            }
+        },
+        "onLeft": {
+            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "webhook": {
+                "username": "On Left",
+                "avatar_url": null,
+                "content": "",
+                "embeds": [
+                    {
+                        "title": "Player left",
+                        "description": "The player **{0}** left the server.",
+                        "fields": [],
+                        "color": "#ff2121"
+                    }
+                ]
+            }
+        },
+        "onDeath": {
+            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "webhook": {
+                "username": "Deaths",
+                "avatar_url": null,
+                "content": "",
+                "embeds": [
+                    {
+                        "title": "Player death",
+                        "description": "The player **{0}** death. Killed by **{2}**",
+                        "fields": [],
+                        "color": "#ff2121"
+                    }
+                ]
+            }
+        },
+        "onKill": {
+            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "webhook": {
+                "username": "Kills",
+                "avatar_url": null,
+                "content": "",
+                "embeds": [
+                    {
+                        "title": "Player kill",
+                        "description": "The player **{0}** killed **{2}**.",
+                        "fields": [],
+                        "color": "#ff2121"
+                    }
+                ]
+            }
+        },
+        "onChatLocal": {
+            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "webhook": {
+                "username": "Chat Local",
+                "avatar_url": null,
+                "content": "Player **{0}** said: **{2}**",
+                "embeds": []
+            }
+        },
+        "onChatGlobal": {
+            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "webhook": {
+                "username": "Chat Global",
+                "avatar_url": null,
+                "content": "Player **{0}** said to all: **{2}**",
+                "embeds": []
+            }
+        },
+        "onCommand": {
+            "url": "https://discord.com/api/webhooks/1327063654784569424/p43MfeiBsWmT7aD6zsyihgcD9VQYOWztd24sZUw43Wo3OEuzdUREQxEN0h141-fzIdVO",
+            "webhook": {
+                "username": "Commands",
+                "avatar_url": null,
+                "content": "Player **{0}** executed the command: **{2}**",
+                "embeds": []
+            }
+        }
+    }
+}
