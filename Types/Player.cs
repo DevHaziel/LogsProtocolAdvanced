@@ -53,8 +53,9 @@ namespace LogsProtocolAdvanced.Types
         [Execution(ExecutionMode.PostEvent)]
         public override bool Death(ShDestroyable destroyable, ShPlayer attacker)
         {
-            if(destroyable is ShPlayer player)
+            if (destroyable is ShPlayer player)
             {
+                if (attacker == null) attacker = player;
                 if(!player.isHuman) return true;
                 if (Files.Instance.config == null)
                 {
